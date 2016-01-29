@@ -1,0 +1,2 @@
+1.git branch -v 显示分支的信息比git branch命令更加详尽
+2.git merge commitId 將commitId 合并到当前版本

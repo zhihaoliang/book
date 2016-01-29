@@ -1,0 +1,9 @@
+1.git commit -amend 修补命令修改最新提交的提交说明
+2.git rebase -i <commit-id> 休改<commit-id>所标识的提交的提交说明
+3.git rm --cached winxp.img 删除误提交的文件winxp.img
+4.git add -u 將所有修改的文件加入暂存区
+5.git add -A 將本地删除的文件和新増的文件都加如暂存区
+6.git add -p 可以对一个文件的修改进行有选择的添加
+7.git diff --word-diff 就会逐字的比较
+8.git diff --cached 查看添加到暂存区中的文件做出的修改
+9.

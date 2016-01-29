@@ -1,0 +1,10 @@
+1.git log -1 --pretty=raw 查看详尽的日志输出 -n limits the number of commits to show. Note that is a commit limiting
+2.git cat-file -t id 查看改id的类型
+3.git cat-file -p id 查看改id的内容
+4.git -b show the branch and tracking info even in short-format
+5.git branch 是分支管理的主要命令
+6.git --graph 一个历史图 后面可以根id
+7.git rev-parse refs/heads/master 显示master对应的提交id refs/heads/master 可以简写为master而且通常用简写
+  git rev-parse HEAD 显示head的提交id
+8.HEAD 表示最新的一次提交 HEAD^表示最新一次提交的父提交 HEAD^^表示HEAD^提交的父提交 HEAD^^^可以简写为HEAD~3
+9.HEAD 可以有多个父提交 HEAD^2表是HEAD的第二个父提交

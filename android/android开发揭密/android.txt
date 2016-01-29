@@ -1,0 +1,89 @@
+1.android list targets 列出模拟器类型
+2.android list avd 列出自己创建的模拟器
+3.android delete avd cupcake 删除模拟器 cupcake 要删除模拟器的名字
+4.emulator -debug avd_config -avd cupcake 指定用什么模拟器启动
+5.android 游戏开发中 postInvalidate 和 invalidate 都是刷新界面但是 invalidate 只能在handler中用。
+6.math.ceil向上取整 int a =math.ceil(doublue)
+7.drawBitmap(Bitmapbitmap, Rect src, Rect dst,Paint paint) src 是图片的剪切区域 dst是图片放的屏幕的区域
+8.图片的选装
+Matrix matrix = new Matrix();
+matrix.reset();
+matrix.setRotate(angle);
+Bitmap bitmapRst = Bitmap.createBitmap(bitmapSrc,x,y,width,height,matrix,boolean);
+9.图片的缩放
+Matrix matrix = new Matrix();
+matrix.reset();
+matrix.postScale(scaleX,scaleY);
+Bitmap bitmapRst = Bitmap.createBitmap(bitmapSrc,x,y,width,height,matrix,boolean);
+10.android 设置重力加速感应器 可以在Appliaction或者Activity选项中加入 android:screenOrientation="sensor"
+11.获取资源id方法
+int id = getResources().getIdentifier("a" + i, "drawable", mContext.getPackageName());
+12.Properties 存储文件
+/**
+	 * 转载读取数觉读取的目录在：/data/data/package-name/file/music.cfg
+	 * 格式为 ： 
+	 *#Music Switch
+  	 *#Fri Nov 29 03:16:08 GMT 2013
+     *bmusic=true
+	 */
+	void load()
+	{
+		Properties properties = new Properties();
+		try
+		{
+			FileInputStream stream = this.openFileInput("music.cfg");
+			properties.load(stream);
+		}
+		catch (FileNotFoundException e)
+		{
+			return;
+		}
+		catch (IOException e)
+		{
+			return;
+		}
+		mbMusic = Boolean.valueOf(properties.get("bmusic").toString());
+	}
+	
+	boolean save()
+	{
+		Properties properties = new Properties();
+		
+		properties.put("bmusic", String.valueOf(mbMusic));
+		try
+		{
+			FileOutputStream stream = this.openFileOutput("music.cfg", Context.MODE_WORLD_WRITEABLE);
+			
+			properties.store(stream, "Music Switch");
+		}
+		catch (FileNotFoundException e)
+		{
+			return false;
+		}
+		catch (IOException e)
+		{
+			return false;
+		}
+
+		return true;
+	}
+13.android发送邮件
+    Uri uri = Uri.parse("mailto:zhihaoliang07@163.com");  
+    Intent it = new Intent(Intent.ACTION_SENDTO, uri);  
+    it .putExtra(android.content.Intent.EXTRA_SUBJECT, "数据计数");
+		it .putExtra(android.content.Intent.EXTRA_TEXT, "本次计数为 ："+miCount);
+		startActivity(it);
+14.android 的闹钟的实现是通过receiver实现的
+<receiver android:name=".AlarmReceiver" android:process=":remote" />
+Intent intent = new Intent(Activity01.this, AlarmReceiver.class);
+PendingIntent pendingIntent=PendingIntent.getBroadcast(Activity01.this,0, intent, 0);
+AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
+am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+am.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + (10*1000), (24*60*60*1000), pendingIntent); 
+15.数据流转化为bitmap
+Bitmap bitmap = BitmapFactory.decodeStream(is);
+16.webChromeClient 专门用于辅助webView处理javasrcipt的对话框
+17.javasrcipt可以和webView相互调用
+19.采样频率是对声音每秒钟采样的次数，人耳的听觉上限在20kHz左右，目前的采样频率为11kHz,22kHz,44kHz频率越高品质越好，每个样点的数据的表示范围目前常用的是8位，12位，16位，cd唱片采用双音道16位采样，采用的是44.1kHz达到了专业水准
+20.获取sdcard中所有可播放的音乐
+Cursor cursor = query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, null, null, null, MediaStore.Audio.Media.DEFAULT_SORT_ORDER);

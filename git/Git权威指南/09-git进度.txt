@@ -1,0 +1,19 @@
+1.git stash 保存当前的工作的进度。会分别对暂存区和工作区进行保存
+2.git stash list 显示进度列表。此命令显然是暗示了git stash可以多此保存工作进度并回复
+3.git stash pop [--index] [<stash>] 如果不使用任何蚕食，会回复最新保存的工作进度从存储的工作进度列表中清楚
+ 如提供了<stash>参数(来自于git stash list显示的列表)，则从该<stash>中恢复。恢复完毕也將从列表中删除<stash>
+ 选项--index 除了恢复最新保存的工作进度，还尝试回复暂存区。
+4.git stash [save [--patch] [k] -- [no-] keep-index] [-q|--quiet] [<message>]
+ 这是几上是git stash命令的完整版。即保存工作进度的时候使用说明，必需使用如下的格式 git stash save "message.."
+ 使用参数--patch 会显示工作区和HEAD的差异，通过对差异文件的编译决定
+ -k 或者 -keep-index 参数，在保存进度后不会將暂存区重置。默认会將暂存区和工作区强制重置
+5.git stash apply [--index] [<stash>] 除了不删除回复进度之外，和git stash pop 命令一样
+6.git stash drop [<stash>] 删除一个存储的进度。默认删除最新的进度
+7.git stash clear 删除所有的存储进度
+8.git stash branch <branchname> <stash> 基于进度创建分支
+9.git --exec-path git执行目录的查询
+10.本地没有被版本控制系统跟踪的文件是不能保持进度的
+11.ls -l dir1 dir2 产看目录dir1和目录dir2中的文件
+12.git reflog show refs/stash 和git stash list 效果是相同这说明stash保存信息的文件是refs/stash
+13.git log --graph --praph --pretty=raw refs/stash -2 查看res/stash的最近两次提交
+

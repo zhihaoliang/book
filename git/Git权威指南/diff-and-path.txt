@@ -1,0 +1,8 @@
+diff & patch
+diff hello.txt world.txt 比较原文件hello.txt和目标文件world.txt 的差别
+diff -u hello.txt world.txt 在差异输出时带上下文
+diff -u hello.txt world.txt > diff.txt 把hello.txt 和 world.txt 的差异输入到文件diff.txt 当中
+cp hello.txt world.txt 用源文件hello.txt覆盖目标文件world.txt
+patch world.txt < diff.txt 根据diff.txt重新生成world.txt
+cp world.txt hello.txt 用目标文件hello.txt覆盖源文件world.txt
+patch -R hello.txt < diff.txt 根据diff.txt重新生成world.txt:

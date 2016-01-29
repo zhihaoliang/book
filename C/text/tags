@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+del_char	07-del-char/del-str.c	/^char[] del_char(char str[],char ch){$/;"	f
+enter_char	07-del-char/enter_char.c	/^void enter_char(char str[80]){$/;"	f
+index	07-03-a.c	/^int index;$/;"	v
+main	01-01.c	/^main(){$/;"	f
+main	01-02.c	/^main()$/;"	f
+main	01-03.c	/^main()$/;"	f
+main	03-01.c	/^main(){$/;"	f
+main	03-02.c	/^main(){$/;"	f
+main	03-03.c	/^main(){$/;"	f
+main	03-04.c	/^main(){$/;"	f
+main	07-01.c	/^main(){$/;"	f
+main	07-02.c	/^void main(){$/;"	f
+main	07-03-a.c	/^void main(){$/;"	f
+main	07-del-char/del-char.c	/^main(){$/;"	f
+main	1/5.c	/^main(){$/;"	f
+main	1/6.c	/^main(){$/;"	f
+main	charText.c	/^main(){$/;"	f
+main	hanoi.c	/^main(){$/;"	f
+main	text.c	/^main(){$/;"	f
+max	01-03.c	/^int max(int a, int b)$/;"	f
+maxThree	1/6.c	/^int maxThree(int a,int b,int c){$/;"	f
+maxTwo	1/6.c	/^int maxTwo(int a,int b){$/;"	f
+move	hanoi.c	/^void move(int n, char fromTower,char toTower,char passTower){$/;"	f
+power	07-03-b.c	/^int power(int n){$/;"	f
+print_index	07-02.c	/^void print_index(){$/;"	f
+print_info	hanoi.c	/^void print_info(int n,char fromTower,char toTower){$/;"	f
+print_msg	07-01.c	/^void print_msg(){$/;"	f
+print_st_index	07-02.c	/^void print_st_index(){$/;"	f
+print_star	07-01.c	/^void print_star(){$/;"	f
+print_str	07-del-char/print-str.c	/^void print_str(){$/;"	f

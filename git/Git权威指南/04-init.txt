@@ -1,0 +1,49 @@
+2014-02-12
+1.git --version 查看本机安装git的版本号
+2.git config --global user.name "Haoliang Zhi" 设置git当强用户的姓名
+3.git config --global user.email "zhihaoliang07@163.com" 设置git当前用户的邮箱地址
+4.设置git的别名--希望注册的命令别名能够被所有用户可用
+<1>sudo git config --system alias.st status
+<2>sudo git config --system alias.ci commit
+<3>sudo git config --system alias.co checkout
+<4>sudo git config --system alias.br branch
+5.设置git的别名--希望注册的命令只能被本用户可用
+<1>git config --global alias.st status
+<2>git config --global alias.ci commit
+<3>git config --global alias.co checkout
+<4>git config --global alias.br branch
+6.在git命令输入中开启颜色显示
+git config --global color.ui true
+7.git init 完成版本的初始华
+8.目录.git--git的版本库(repository)
+9.git add welcome.txt 把welcome.txt 加入到版本库
+10.git commit -m "initialized" 提交 -m后面是提交说明
+11.git status 查看你的代码在缓存与当前目录的状态.git status -s 简短的输出
+12.在git工作区某一个子目录操作时
+<1>git rev-parse --git-dir 显示版本库.git目录所在的位置
+<2>git rev-parse --show-toplevel 显示工作区根目录
+<3>git rev-parse --show-prefix 显示相对于工作区根目录的相对目录
+<4>git rev-parse --show-cdup显示当前目录到工作区跟目录的深度
+13.git config各个参数的区别
+<1>git config -e 编辑的是.git的目录下的config文件
+<2>git config -e --global 编辑的是home/zhihaoliang/.gitconfig
+<3>git config -e -system 编辑的是etc/gitconfig
+<1>是此工作目录的设置,<2>设置的是用户级别的全局设置,<3>设置的是系统级别的
+14.git config <section>.<key>用来读取或修改init配置的内容
+<1>git config user.name 读取小节为user key为name的值
+<2>git config user.name “Haoliang zhi” 修改小节为user key为name的值为Haoliang Zhi
+15.向配置文件test.ini中添加配置
+GET_CONFIG=test.ini git config a.b.c.d "hello,world"
+从配置文件test.ini中读取配置
+GET_CONFIG=test.ini git config a.b.c.d
+16 删除配置文件中的user.name和user.email
+git config --unset --global user.name
+git config --unset --global user.email
+17.允许空白提交
+git commit --allow-empty -m "who does commit"
+18.git commit --amend --allow-empty --reset-author
+参数 --amend 是对刚刚提交的进行修补，这样就可以更正前面提交的错误，而不产生新发提交
+参数 --allow-empty 使得空白提交被允许，因为是修改上次的提交所以必需使用空白提交
+参数 --reset-author的含义是將author的ID同步修改负责只会影响commit ID此参数也会重置authorDate的信息
+18.git clone demo demo-step-1 把工程demo克隆到demo-step-1中
+

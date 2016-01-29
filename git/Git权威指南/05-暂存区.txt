@@ -1,0 +1,19 @@
+1.git log --stat  参数--stat可以看到每次提交文件变更的统计
+2.git diff 查看修改文件和版本库中件差异
+3.git log --pretty=oneline 显示log在同一行
+4.git diff HEAD 与当前版本库中的头指针比较
+5.git diff master 与当前分支进行比较
+6.git diff --cached 或 git diff --staged 查看暂存区和版本库中的文件差异
+7.git checkout 恢复工作区的于staged区相同
+8.git checkout -- welcome.txt
+9.git reset HEAD 暂存区的目录树会被重写，会被master分支指向的目录树替换，但是工作区不受影响
+10.git rm --cached <file>会直接从暂存区删除文件，工作区则不会做出改变
+11.git checkout HEAD <file>会用全部或部分文件替换暂存区和工作区的文件
+12.git ls-tree -1 HEAD 表示HEAD区指向的暂存目录树
+13.git clean -fd 清除当前工作区没有加入版本库的文件和目录
+14.git add . 把当前目录的所有文件和目录都加入到staged区
+15.git ls-files -s显示暂存区的目录
+16.git write-tree把暂存区的目录树写到git对象库 返回对象库的id
+17.git ls -tree id 表示此id指向暂存区的目录树
+18.git commit -a对所有本地变更的文件进行提交操作，但是不包括未被版本库跟踪的文件，这个操作减少了git add的命令表示更改
+19.git stash 用于保存当前进度 
